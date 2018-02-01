@@ -17,6 +17,9 @@
 (defun rectangleArea (width height)
   "Compute the area of a rectangle, passed its width and height."
   (* width height))
+rectangleArea
+(rectangleArea 3 5)
+15
 
 
 (defun rectangle_area(w h)
@@ -25,3 +28,10 @@
   (setq area (rectangleArea w h))      
   (message "The rectangle's area is %f." area))
 
+rectangle_area
+(rectangle_area 3 5)
+"The rectangle’s area is 15.000000."
+(rectangle_area 8 4)
+"The rectangle’s area is 32.000000."
+(rectangle_area 3.14 2.71)
+"The rectangle’s area is 8.509400."
