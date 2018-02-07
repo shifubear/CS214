@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>           /* atoi() */
 #include <string.h>           /* strcmp() */
-#include "example5.tab.h"
+#include "example6.tab.h"
 %}
 %%
 [0-9]+                  yylval = atoi(yytext); return NUMBER;

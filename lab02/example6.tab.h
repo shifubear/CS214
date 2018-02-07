@@ -49,8 +49,8 @@ extern int yydebug;
     TOKHEAT = 259,
     STATE = 260,
     TOKSET = 261,
-    TOKTEMPERATURE = 262,
-    TOKHUMIDITY = 263,
+    TOKHUMIDITY = 262,
+    TOKTEMPERATURE = 263,
     TOKTO = 264
   };
 #endif

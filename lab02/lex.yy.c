@@ -487,7 +487,7 @@ char *yytext;
 #include <stdio.h>
 #include <stdlib.h>           /* atoi() */
 #include <string.h>           /* strcmp() */
-#include "example5.tab.h"
+#include "example6.tab.h"
 #line 492 "lex.yy.c"
 
 #define INITIAL 0

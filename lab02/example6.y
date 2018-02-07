@@ -22,7 +22,7 @@ int main() {
 
 %}
 
-%token NUMBER TOKHEAT STATE TOKSET TOKTEMPERATURE TOKHUMIDITY TOKTO
+%token NUMBER TOKHEAT STATE TOKSET TOKHUMIDITY TOKTEMPERATURE TOKTO
 %%
 
 commands: /* empty */
@@ -56,6 +56,6 @@ temperature_set:
 humidity_set:
         TOKSET TOKHUMIDITY TOKTO NUMBER
         {
-                printf("\tHumidity set to %d\n", $4)
+                printf("\tHumidity set to %d\n", $4);
         }
         ;

@@ -1,0 +1,95 @@
+Script started on Wed 07 Feb 2018 09:19:00 AM EST
+sf27@stroustrup:~/Desktop/cs214/lab02$ cat eam  xample6.lex
+%{
+#include <stdio.h>
+#include <stdlib.h>           /* atoi() */
+#include <string.h>           /* strcmp() */
+#include "example6.tab.h"
+%}
+%%
+[0-9]+                  yylval = atoi(yytext); return NUMBER;
+heat                    return TOKHEAT;
+on|off                  yylval = !strcmp(yytext,"on"); return STATE;
+set                     return TOKSET;
+temperature             return TOKTEMPERATURE;
+humidity                return TOKHUMIDITY;
+to                      return TOKTO;
+\n                      /* ignore end of line */;
+[ \t]+                  /* ignore whitespace */;
+%%sf27@stroustrup:~/Desktop/cs214/lab02$ cat example. 6.y
+%{
+#include <stdio.h>
+#include <string.h>
+
+/* declarations */
+int yylex (void);
+void yyerror (char const *);
+int yyparse(void);
+
+/* definitions */ 
+void yyerror(const char *str) {
+        fprintf(stderr,"error: %s\n",str);
+}
+ 
+int yywrap() {
+        return 1;
+} 
+ 
+int main() {
+        yyparse();
+} 
+
+%}
+
+%token NUMBER TOKHEAT STATE TOKSET TOKHUMIDITY TOKTEMPERATURE TOKTO
+%%
+
+commands: /* empty */
+        | commands command
+        ;
+
+command:
+        heat_switch
+        | temperature_set
+        | humidity_set
+        ;
+
+heat_switch:
+        TOKHEAT STATE
+        {
+                if ($2) {  /* if STATE == 1 */
+                        printf("\tHeat turned on\n");
+                } else {
+                        printf("\tHeat turned off\n");
+                }
+        }
+        ;
+
+temperature_set: 
+        TOKSET TOKTEMPERATURE TOKTO NUMBER
+        {
+                printf("\tTemperature set to %d\n",$4);
+        }
+        ;
+
+humidity_set:
+        TOKSET TOKHUMIDITY TOKTO NUMBER
+        {
+                printf("\tHumidity set to %d\n", $4);
+        }
+        ;sf27@stroustrup:~/Desktop/cs214/lab02$ flex 3xampl      example6.lex
+sf27@stroustrup:~/Desktop/cs214/lab02$ g bison -d example7 6.y
+sf27@stroustrup:~/Desktop/cs214/lab02$ gcc lex.yy.c ea xample6.tab.c -o examply e  6
+sf27@stroustrup:~/Desktop/cs214/lab02$ ./example6
+heat on
+	Heat turned on
+te  set temperature to 45
+	Temperature set to 45
+set humidity to 12
+	Humidity set to 12
+heat off
+	Heat turned off
+sf27@stroustrup:~/Desktop/cs214/lab02$ exit
+exit
+
+Script done on Wed 07 Feb 2018 09:21:08 AM EST

@@ -125,8 +125,8 @@ extern int yydebug;
     TOKHEAT = 259,
     STATE = 260,
     TOKSET = 261,
-    TOKTEMPERATURE = 262,
-    TOKHUMIDITY = 263,
+    TOKHUMIDITY = 262,
+    TOKTEMPERATURE = 263,
     TOKTO = 264
   };
 #endif
@@ -455,7 +455,7 @@ static const yytype_uint8 yyrline[] =
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "NUMBER", "TOKHEAT", "STATE", "TOKSET",
-  "TOKTEMPERATURE", "TOKHUMIDITY", "TOKTO", "$accept", "commands",
+  "TOKHUMIDITY", "TOKTEMPERATURE", "TOKTO", "$accept", "commands",
   "command", "heat_switch", "temperature_set", "humidity_set", YY_NULLPTR
 };
 #endif
@@ -493,7 +493,7 @@ static const yytype_int8 yypact[] =
 static const yytype_uint8 yydefact[] =
 {
        2,     0,     1,     0,     0,     3,     4,     5,     6,     7,
-       0,     0,     0,     0,     8,     9
+       0,     0,     0,     0,     9,     8
 };
 
   /* YYPGOTO[NTERM-NUM].  */
@@ -1237,7 +1237,7 @@ yyreduce:
   case 9:
 #line 58 "example6.y" /* yacc.c:1646  */
     {
-                printf("\tHumidity set to %d\n", (yyvsp[0]))
+                printf("\tHumidity set to %d\n", (yyvsp[0]));
         }
 #line 1243 "example6.tab.c" /* yacc.c:1646  */
     break;
