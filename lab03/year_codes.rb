@@ -9,6 +9,19 @@
 # Output: The corresponding integer code for the given academic year
 
 #  Replace this line with the definition of function yearCode() 
+def yearCode year
+    if year =~ /freshman/
+        1
+    elsif year =~ /sophomore/
+        2
+    elsif year =~ /junior/
+        3
+    elsif year =~ /senior/
+        4
+    else 
+        0
+    end
+end
 
 if __FILE__ == $0
    print "Enter the year: "

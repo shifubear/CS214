@@ -16,15 +16,15 @@ procedure year_codes is
     charsRead : Natural;
     
     -- replace this comment with the definition of yearCode()
-    function YearCode (year : string) return int is
-        begin
-            if year = "freshman" then
+    function YearCode (year : string) return Integer is
+        begin             
+            if     year = "freshman " then
                 return 1;
             elsif (year = "sophomore") then
                 return 2;
-            elsif (year = "junior") then
+            elsif (year = "junior   ") then
                 return 3;
-            elsif (year = "senior") then
+            elsif (year = "senior   ") then
                 return 4;
             else
                 return 0;
