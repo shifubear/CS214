@@ -1,3 +1,7 @@
+/* LetterGrade.java is a driver for function letterGrade().
+ *
+ * Begun by: Shion Fukuzawa, for CS 214 at Calvin College.
+ ****************************************************************/
 import java.util.Scanner;
 
 public class LetterGrade {
@@ -11,13 +15,12 @@ public class LetterGrade {
    }
 
    /***************************************************************
-    * yearCode() converts an academic year into its integer code.
+    * letterGrade() converts an academic year into its integer code.
     *
-    * Receive: year, a string.
-    * PRE: year is one of {freshman, sophomore, junior, or senior}.
-    * Return: the integer code corresponding to year.
+    * Receive: average, an Integer.
+    * PRE: 0 <= average <= 100.
+    * Return: the letter grade corresponding to average.
     */
-
    public static char letterGrade(Integer average)
    {
         switch (average / 10)

@@ -1,0 +1,238 @@
+Script started on Fri Feb 16 09:11:52 2018
+[?1034hbash-3.2$ cat LetterGrade.java
+/* LetterGrade.java is a driver for function letterGrade().
+ *
+ * Begun by: Shion Fukuzawa, for CS 214 at Calvin College.
+ ****************************************************************/
+import java.util.Scanner;
+
+public class LetterGrade {
+
+   public static void main(String[] args) {
+      Scanner keyboard = new Scanner(System.in);
+      System.out.println("\nEnter your grade: "); // prompt
+
+      String average = keyboard.next();       // read year
+      System.out.println(letterGrade(Integer.parseInt(average)));   // display its code
+   }
+
+   /***************************************************************
+    * letterGrade() converts an academic year into its integer code.
+    *
+    * Receive: average, an Integer.
+    * PRE: 0 <= average <= 100.
+    * Return: the letter grade corresponding to average.
+    */
+   public static char letterGrade(Integer average)
+   {
+        switch (average / 10)
+        {
+            case 10: case 9:
+                return 'A';
+            case 8:
+                return 'B';
+            case 7:
+                return 'C';
+            case 6:
+                return 'D';
+            default:
+                return 'F';
+        }
+   }
+
+}bash-3.2$ javac LetterGrade.java
+bash-3.2$ java LetterGrade
+
+Enter your grade: 
+100
+A
+bash-3.2$ java LetterGrade
+
+Enter your grade: 
+90
+A
+bash-3.2$ java LetterGrade
+
+Enter your grade: 
+89
+B
+bash-3.2$ java LetterGrade
+
+Enter your grade: 
+76
+C
+bash-3.2$ java LetterGrade
+
+Enter your grade: 
+65
+D
+bash-3.2$ java LetterGrade
+
+Enter your grade: 
+40
+F
+bash-3.2$ exit
+
+Script done on Fri Feb 16 09:12:31 2018
+Script started on Fri Feb 16 09:10:48 2018
+[?1034hbash-3.2$ cat letter_grade.adb
+-- letter_grade.adb converts a numerical grade to its corresponding letter grade.
+--
+-- By: Shion Fukuzawa, for CS 214 at Calvin College.
+--
+-- Input: average, an integer
+-- Precondition: 0 <= average <= 100 
+-- Output: The letter grade (A, B, C, D, or F) corresponding to average.
+----------------------------------------------------
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use  Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure letter_grade is
+
+    average : Integer;
+    averageS : String(1 .. 3) := "   ";
+    letter : String(1 .. 1) := " ";
+    charsRead : Natural;
+    
+    function LetterGrade (average : Integer) return string is
+        begin             
+            case average is
+                when 90 .. 100 => letter := "A";
+                when 80 .. 89  => letter := "B";
+                when 70 .. 79  => letter := "C";
+                when 60 .. 69  => letter := "D";
+                when others    => letter := "F";
+            end case;
+            return letter;
+        end LetterGrade;
+
+begin                                          
+    Put("Enter your grade: ");           -- Prompt for input
+    Get_Line(averageS, charsRead);                   -- Input
+    average := Integer'Value(averageS);
+    Put( LetterGrade(average) );                       -- Convert and output
+    New_Line;
+end letter_grade;
+
+bash-3.2$ gnatmake letter_grade.adb
+gnatmake: "letter_grade" up to date.
+bash-3.2$ ./letter_grade
+Enter your grade: 100
+A
+bash-3.2$ ./letter_grade
+Enter your grade: 90
+A
+bash-3.2$ ./letter_grade
+Enter your grade: 89
+B
+bash-3.2$ ./letter_grade
+Enter your grade: 76
+C
+bash-3.2$ ./letter_grade
+Enter your grade: 65
+D
+bash-3.2$ ./letter_grade
+Enter your grade: 40
+F
+bash-3.2$ exit
+
+Script done on Fri Feb 16 09:11:39 2018
+;;; letter_grade.el is a driver for function letterGrade.
+;;; Begun by: Shion Fukuzawa, for CS 214 at Calvin College.
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; letterGrade returns the code for a given academic year.              ;;;
+;;; Receive: grade, an integer.                                          ;;;
+;;; Precondition: 0 <= grade <= 100                                      ;;;
+;;; Return: the letter grade corresponding to grade.                     ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun letterGrade (grade)
+  "Takes a numerical grade and converts it to the corresponding letter"
+  (cond ((< grade 60) "F")
+	((< grade 70) "D")
+	((< grade 80) "C")
+	((< grade 90) "B")
+	((<= grade 100) "A"))
+  )
+letterGrade
+(letterGrade 100)
+"A"
+(letterGrade 90)
+"A"
+(letterGrade 89)
+"B"
+(letterGrade 76)
+"C"
+(letterGrade 65)
+"D"
+(letterGrade 40)
+"F"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; main function                         ;;;
+;;; input: grade                          ;;;
+;;; output: letter corresponding to grade ;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun main (grade)
+  (interactive "sEnter your numerical grade: ")  ; read grade
+ (message "%s" (letterGrade (string-to-number grade))))             ; display its letter
+main
+
+
+Script started on Fri Feb 16 09:47:55 2018
+[?1034hbash-3.2$ cat letter_grade.rb
+#! /usr/bin/ruby
+# letter_grade.rb translates a numeric grade into a letter grade
+# Begun by: Shion Fukuzawa, for CS 214 at Calvin College 
+################################################################
+
+# Input:  The numeric grade
+# Precondition: 0 <= grade <= 100
+# Output: The corresponding letter grade for the given grade
+
+def letterGrade grade
+    case grade 
+    when 90..100
+        "A"
+    when 80..89
+        "B"
+    when 70..79
+        "C"
+    when 60..69
+        "D"
+    else
+        "F"
+    end
+end
+
+if __FILE__ == $0
+   print "Enter your grade: "
+   grade = gets
+   print "Letter grade is: "
+   puts letterGrade(grade.to_i)
+end
+
+bash-3.2$ ruby letter_grade.rb
+Enter your grade: 100
+Letter grade is: A
+bash-3.2$ ruby letter_grade.rb 
+Enter your grade: 90
+Letter grade is: A
+bash-3.2$ ruby letter_grade.rb 
+Enter your grade: 89
+Letter grade is: B
+bash-3.2$ ruby letter_grade.rb
+Enter your grade: 76
+Letter grade is: C
+bash-3.2$ ruby letter_grade.rb
+Enter your grade: 65
+Letter grade is: D
+bash-3.2$ ruby letter_grade.rb
+Enter your grade: 40
+Letter grade is: F
+bash-3.2$ exit
+
+Script done on Fri Feb 16 09:48:53 2018

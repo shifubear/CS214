@@ -3,6 +3,7 @@ sf27@stroustrup:~/Desktop/cs214/lab03$ cat YearD Codes.java
 /* YearCodes.java is a driver for function yearCode().
  *
  * Begun by: Prof. Adams, for CS 214 at Calvin College.
+ * Completed by: Shion Fukuzawa, for CS 214 at Calvin College.
  ****************************************************************/
 
 import java.util.Scanner;
@@ -74,6 +75,7 @@ Script started on Fri Feb  9 09:24:47 2018
 -- year_codes.adb converts academic year codes to corresponding years.
 --
 -- Begun by: Dr. Adams, for CS 214 at Calvin College.
+-- Completed by: Shion Fukuzawa, for CS 214 at Calvin College. 
 --
 -- Input: year, a string
 -- Precondition: year is one of "freshman", "sophomore", "junior", "senior"
@@ -138,6 +140,7 @@ bash-3.2$ exit
 Script done on Fri Feb  9 09:25:36 2018
 ;;; year_codes.el is a driver for function yearCode.
 ;;; Begun by: Dr. Adams, for CS 214 at Calvin College.
+;;; Completed by: Shion Fukuzawa, for CS 214 at Calvin College. 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; yearCode returns the code for a given academic year.                 ;;;
@@ -186,6 +189,7 @@ Script started on Fri Feb  9 09:54:00 2018
 #! /usr/bin/ruby
 # year_codes.rb translates an academic year into a numeric code
 # Begun by: Dr. Nelesen, for CS 214 at Calvin College 
+# Completed by: Shion Fukuzawa, for CS 214 at Calvin College
 ################################################################
 
 # Input:  The name of an academic year
