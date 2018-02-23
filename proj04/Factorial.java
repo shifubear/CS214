@@ -4,25 +4,31 @@
  * PRE: 0 <= n
  * Output: n factorial.
  * By: Shion Fukuzawa, for CS 214 at Calvin College. 
+ * Date: February 23, 2018
  ********************************************************/
 import java.util.Scanner; 		// Get input
 
 class Factorial {
 
+  /* function factorial() returns the factorial of n.
+      * Parameter: n, a natural number
+      * Precondition: 0 <= n.
+      * Returns: n factorial.
+      */
+    public static int factorial(int n) {
+      int res = 1;  
+      for (int i = 1; i <= n; i++) {
+          res *= i;
+      }               
+      return res; // return result
+    } // factorial method
+
   public static void main(String[] args){
     Scanner keyboard = new Scanner(System.in);
-    System.out.println("To display a table of logarithms,");
-    System.out.println("enter the start, stop and increment values: ");
-    double start, stop, increment;
-    start = keyboard.nextDouble();
-    stop = keyboard.nextDouble();
-    increment = keyboard.nextDouble();
-
-    while (start <= stop) {
-      System.out.printf("The logarithm of %f is %f\n", start, Math.log10(start));
-      start += increment;
-    }
-
+    System.out.println("To compute n!, enter n:");
+    int n;
+    n = keyboard.nextInt();
+    System.out.printf("%d! = %d\n", n, factorial(n));
   }
 }
 

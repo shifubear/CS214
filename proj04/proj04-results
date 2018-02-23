@@ -1,0 +1,203 @@
+Script started on Fri 23 Feb 2018 09:54:31 AM EST
+sf27@goldberg:~/Desktop/cs214/proj04$ cat Factorial.java
+/* Factorial.java calculates the factorial of a given natural number.
+ *
+ * Input: n, a natural number.
+ * PRE: 0 <= n
+ * Output: n factorial.
+ * By: Shion Fukuzawa, for CS 214 at Calvin College. 
+ * Date: February 23, 2018
+ ********************************************************/
+import java.util.Scanner; 		// Get input
+
+class Factorial {
+
+  /* function factorial() returns the factorial of n.
+      * Parameter: n, a natural number
+      * Precondition: 0 <= n.
+      * Returns: n factorial.
+      */
+    public static int factorial(int n) {
+      int res = 1;  
+      for (int i = 1; i <= n; i++) {
+          res *= i;
+      }               
+      return res; // return result
+    } // factorial method
+
+  public static void main(String[] args){
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("To compute n!, enter n:");
+    int n;
+    n = keyboard.nextInt();
+    System.out.printf("%d! = %d\n", n, factorial(n));
+  }
+}
+
+sf27@goldberg:~/Desktop/cs214/proj04$ javac Factorial.java
+sf27@goldberg:~/Desktop/cs214/proj04$ java Factorial
+To compute n!, enter n:
+0
+0! = 1
+sf27@goldberg:~/Desktop/cs214/proj04$ java Factorial
+To compute n!, enter n:
+3
+3! = 6
+sf27@goldberg:~/Desktop/cs214/proj04$ java Factorial
+To compute n!, enter n:
+7
+7! = 5040
+sf27@goldberg:~/Desktop/cs214/proj04$ exit
+
+Script done on Fri 23 Feb 2018 09:55:18 AM EST
+Script started on Fri 23 Feb 2018 10:00:28 AM EST
+sf27@goldberg:~/Desktop/cs214/proj04$ cat factorial.adb
+-- factorial.adb computes the factorial of n.
+--
+-- Input: n, an integer.
+-- Precondition: n is positive.
+-- Output: n factorial.
+--
+-- By: Shion Fukuzawa, for CS 214 at Calvin College
+-- Date: February 23, 2018
+--------------------------------------------------------------
+
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Numerics.Elementary_Functions;
+use  Ada.Text_IO, Ada.Integer_Text_IO, Ada.Numerics.Elementary_Functions;
+
+procedure factorial is
+
+   n : Integer;
+
+   -- function factorial computes the factorial of a given integer n
+   -- Parameter: n, an integer
+   -- Precondition: n >= 0
+   -- Return: the factorial of n
+   ----------------------------------------------------
+   function factorial(n: in Integer) return Integer is 
+   ret: Integer := 1;
+   begin
+      for i in 1..n loop
+         ret := ret * i;
+      end loop;
+      return ret;
+   end factorial;
+
+
+begin                                           -- Prompt for input
+   Put_Line("To calculate the factorial,");
+   Put(" enter n: ");
+   Get(n);
+
+   Put("The factorial of ");
+   Put(n, Width => 1);
+   Put(" is ");
+   Put( factorial(n), Width => 1);
+
+end factorial;
+
+sf27@goldberg:~/Desktop/cs214/proj04$ gnatmake factorial.adb
+gnatmake: "factorial" up to date.
+sf27@goldberg:~/Desktop/cs214/proj04$ ./factorial
+To calculate the factorial,
+ enter n: 0
+The factorial of 0 is 1
+sf27@goldberg:~/Desktop/cs214/proj04$ ./factorial
+To calculate the factorial,
+ enter n: 3
+The factorial of 3 is 6
+sf27@goldberg:~/Desktop/cs214/proj04$ ./factorial
+To calculate the factorial,
+ enter n: 7
+The factorial of 7 is 5040
+sf27@goldberg:~/Desktop/cs214/proj04$ exit
+
+Script done on Fri 23 Feb 2018 10:01:05 AM EST
+;;; factorial.el computes the factorial of n. 
+;;;                                                                     
+;;; Input: A non-negative integer n.                                    
+;;; Precondition: n is non-negative.                      
+;;; Output: n factorial.                                     
+;;; 
+;;; By: Shion Fukuzawa, for CS214 at Calvin College
+;;; Date: February 23, 2018
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                   
+
+;;; function factorial computes the factorial of n, given integer n.     
+;;; Parameters: n, a number.                                            
+;;; Precondition: n >= 0.                                               
+;;; Returns: n factorial.                   
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;                  
+(defun factorial (n)
+  "Compute the factorial of n, given integer n."
+  (if (> n 0)
+   (* n (factorial (- n 1)))
+    1))
+factorial
+(factorial 0)
+1
+
+(factorial 3)
+6
+
+(factorial 7)
+5040
+
+
+
+(defun Factorial(n)
+ "Compute the area of a circle, given its radius interactively."
+  (interactive "nEnter an integer n: ")        
+  (setq fact (factorial n))      
+  (message "%f! = %f." n fact))
+Factorial
+
+
+Script started on Fri 23 Feb 2018 10:23:25 AM EST
+sf27@goldberg:~/Desktop/cs214/proj04$ cat factorial.rb
+#! /usr/bin/ruby
+# factorial.rb computes the factorial of a given integer n
+# 
+# Input: a non-negative integer n
+# Precondition: n not negative
+# Output: n!
+#
+# By: Shion Fukuzawa, for CS214 at Calvin College
+# Date: February 23, 2018
+###############################################################
+
+# function factorial returns a n factorial, given integer n
+# Parameters: n, a number
+# Precondition: n >= 0.
+# Returns: n!
+def factorial(n)
+    ret = 1
+    for i in 1..n 
+        ret *= i
+    end
+    return ret
+end
+
+if __FILE__ == $0
+   puts "To computer n!, "
+   print " enter n: "
+   n = gets.chomp.to_i
+   print n
+   print "! = "
+   puts factorial(n)
+end
+sf27@goldberg:~/Desktop/cs214/proj04$ ruby factorial.rb
+To computer n!, 
+ enter n: 0
+0! = 1
+sf27@goldberg:~/Desktop/cs214/proj04$ ruby factorial.rb
+To computer n!, 
+ enter n: 3
+3! = 6
+sf27@goldberg:~/Desktop/cs214/proj04$ ruby factorial.rb
+To computer n!, 
+ enter n: 7
+7! = 5040
+sf27@goldberg:~/Desktop/cs214/proj04$ exit
+
+Script done on Fri 23 Feb 2018 10:23:45 AM EST

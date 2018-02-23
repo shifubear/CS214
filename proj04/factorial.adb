@@ -5,6 +5,7 @@
 -- Output: n factorial.
 --
 -- By: Shion Fukuzawa, for CS 214 at Calvin College
+-- Date: February 23, 2018
 --------------------------------------------------------------
 
 with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Numerics.Elementary_Functions;
@@ -35,9 +36,9 @@ begin                                           -- Prompt for input
    Get(n);
 
    Put("The factorial of ");
-   Put(n);
+   Put(n, Width => 1);
    Put(" is ");
-   Put( factorial(n) );
+   Put( factorial(n), Width => 1);
 
 end factorial;
 
