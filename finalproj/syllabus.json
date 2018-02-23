@@ -1,0 +1,43 @@
+{
+    "course": {
+        "title": "African American History",
+        "id": "HIST255",
+        "days": "MWF",
+        "time": "1:30-2:20",
+        "professor": {
+            "name": "Eric M. Washington", 
+            "office": "470HH",
+            "officehours": {
+                "T": "1:00-3:00",
+                "Th": "1:00-3:00"
+            },
+            "phone": "6-8630",
+            "email": "emw23@calvin.edu"
+        },
+        "description": "HIST 255 is a survey of African-American history beginning with the origins of the Trans-Atlantic Slave Trade to issues of race and justice in the "Age of Obama." Along this journey, the course highlights the creation of slave societies in British North America, the development of Afro-Christianity, African-American participation in American wars, the initiation of social and political movements for freedom and inclusion in America, and shifts in collective identity. ",
+        "texts": [
+            {"title": "Freedom on My Mind: A History of African Americans with Documents (Bedford/St. Martin's, 2017) Second Edition", "author": "Deborah Gray White, Mia Bay, and Waldo Martin"},
+            {"title": "Narrative of the Life of Frederick Douglass and Incidents in the Life of a Slave Girl ", "author": "Frederick Douglass and Harriet Jacobs"},
+            {"title": "Song of Solomon", "author": "Toni Morrison"}
+        ], 
+        "LO": [
+            {"outcome": "Identify with the major themes and chronology of African-American history from the period of the Trans-Atlantic Slave Trade to contemporary times;"},
+            {"outcome": "Articulate the meaning of African-American history and its importance in offering a corrective to mainstream narratives of American history;"},
+            {"outcome": "Critically engage African-American writings to understand the experiences and self-understanding of African Americans."}
+        ], 
+        "grading": {
+            "lettergrade": [
+                {"letter": "A", "range": "94-100"}, 
+                {"letter": "A-", "range": "90-93"}
+            ],
+            "weights": [
+                {"title": "midterm", "weight": 100},
+                {"title": "reflection paper", "weight": 100}
+            ],
+            "totalweight": 450
+        },
+        "policies": [
+            {"policy": "Attendance", "description": "attendance is mandatory. Since there are providential occurrences, I allow for three unexcused absences. Beyond three, a student's overall grade will be lowered by 1/3 of a letter grade. Excused absences are illnesses, death in the family, etc. Illnesses are accompanied with a physician's note. When possible, notify me of any absences that may be excusable beforehand or immediately after."}
+        ]
+    }
+}
