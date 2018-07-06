@@ -1,0 +1,91 @@
+V "GNAT Lib v2017"
+M P W=b
+P SS ZX
+
+RN
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U name_tester%b		name_tester.adb		3fd247a8 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.concat_5%s	s-conca5.adb		s-conca5.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20170516105951 76789da1 ada%s
+D a-except.ads		20170516105953 291912d5 ada.exceptions%s
+D a-ioexce.ads		20170516105949 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
+D a-tags.ads		20170516105955 d3a89129 ada.tags%s
+D a-textio.ads		20170516105955 386df5d4 ada.text_io%s
+D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
+D interfac.ads		20170516105950 5ab55268 interfaces%s
+D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
+D name_tester.adb	20180602174621 07bfb27c name_tester%b
+D system.ads		20170516105953 085b6ffb system%s
+D s-conca5.ads		20170516105951 875e432e system.concat_5%s
+D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
+D s-exctab.ads		20170516105954 54135002 system.exception_table%s
+D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
+D s-parame.ads		20170516105955 7e2a0d7f system.parameters%s
+D s-secsta.ads		20170516105955 9751b57e system.secondary_stack%s
+D s-soflin.ads		20170516105951 14e1eb6c system.soft_links%s
+D s-stache.ads		20170516105955 a37c21ec system.stack_checking%s
+D s-stalib.ads		20170516105955 09bd3940 system.standard_library%s
+D s-stoele.ads		20170516105956 2dc34a04 system.storage_elements%s
+D s-traent.ads		20170516105950 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20170516105953 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 10|7r6 7r23
+X 6 a-textio.ads
+49K13*Text_IO 471e16 10|7w10 7r27
+166U14*New_Line 10|178s16 179s30 190s16
+242U14*Put 10|141s5 156s5 158s5 160s5 179s4
+249U14*Get_Line 10|157s5 159s5 161s5
+X 10 name_tester.adb
+9U11*name_tester 9b11 192l5 192t16
+11i3 NAME_SIZE{integer} 15r45
+13R8 Name 16e15 18r11 32r33 47r35 60r36 72r34 84r38 95r62 106r64 117r60 127r30
+. 139r31 152r36
+15a7 MyFirst{string} 35m13 49r22 86r22 129r44 141r17 163m13
+15a16 MyMiddle{string} 36m13 62r22 86r46 129r68 129r85 129r109 141r41 164m13
+15a26 MyLast{string} 37m13 74r22 86r71 129r20 141r66 165m13
+18r3 aName{13R8} 171m9 173r28 174r29 175r27 176r31 178r8 181m25 181r25 182r28
+. 183m26 183r26 184r29 185m24 185r24 186r27 187r24 189m9 189r9 190r8
+32U13 Init 32b13 32<19 33>21 33>28 33>36 38l7 38t11 97s5 108s5 119s5 171s4
+32r19 TheName{13R8} 35m5 36m5 37m5
+33a21 First{string} 35r24
+33a28 Middle{string} 36r25
+33a36 Last{string} 37r23
+47V13 getFirst{string} 47b13 47>22 50l8 50t16 108s19 119s19 173s19 182s19
+47r22 TheName{13R8} 49r14
+60V13 getMiddle{string} 60b13 60>23 63l8 63t17 97s29 119s38 174s19 184s19
+60r23 TheName{13R8} 62r14
+72V13 getLast{string} 72b13 72>21 75l8 75t15 97s49 108s49 175s19 186s19
+72r21 TheName{13R8} 74r14
+84V13 getFullName{string} 84b13 84>25 87l8 87t19 176s19
+84r25 TheName{13R8} 86r14 86r38 86r63
+95U13 setFirst 95b13 95>23 95=45 98l7 98t15 181s4
+95a23 newFirst{string} 97r19
+95r45 newName{13R8} 97m10 97r39 97r57
+106U13 setMiddle 106b13 106>24 106=47 109l7 109t16 183s4
+106a24 newMiddle{string} 108r38
+106r47 newName{13R8} 108m10 108r28 108r57
+117U13 setLast 117b13 117>22 117=43 120l7 120t14 185s4
+117a22 newLast{string} 119r58
+117r43 newName{13R8} 119m10 119r28 119r48
+127V12 lfmi{string} 127b12 127>17 130l7 130t11 187s19
+127r17 theName{13R8} 129r12 129r36 129r60 129r77 129r101
+139U14 Put 139b14 139>18 143l8 143t11 178s4 190s4
+139r18 TheName{13R8} 141r9 141r33 141r58
+152U14 read 152b14 152=19 166l8 166t12 189s4
+152r19 TheName{13R8} 163m5 164m5 165m5
+153a5 FirstName{string} 157m14 163r24
+153a16 MiddleName{string} 159m14 164r25
+153a28 LastName{string} 161m14 165r23
+154i5 Chars_Read{natural} 157m25 159m26 161m24
+
